@@ -10,7 +10,7 @@ function(A, B, E, tau=1, DesiredL=((tau*(E-1)+(E+1)):length(A)-E+2), iterations=
   
   # Make list of acceptable starting positions
   gapdist<-tau*(E-1)
-  acceptablelib<-as.numeric(is.finite(A))
+  acceptablelib<-as.numeric(is.finite(A)) # 判断正常值
   lA<-length(A)
   for(i in 1:gapdist) {
     acceptablelib<-acceptablelib*as.numeric(is.finite(c(rep(NA, i),A[-c((lA-i+1):lA)])))
